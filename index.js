@@ -3,8 +3,16 @@ const app = express()
 const cors = require('cors')
 require('dotenv').config()
 
-app.use(cors())
+// ? setup multiple origin 
+app.use(cors({
+  origin : '*',optionsSuccessStatus :200
+}))
+
+// ? setup file static 
 app.use(express.static('public'))
+
+
+
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/views/index.html')
 });
