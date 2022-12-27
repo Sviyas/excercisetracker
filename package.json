@@ -1,33 +1,36 @@
 {
-	"name": "exercise-tracker",
-	"version": "0.1.0",
-	"description": "A REST API project, part of Free Code Camp's curriculum",
-	"main": "index.js",
-	"scripts": {
-		"dev": "nodemon --exec ./node_modules/.bin/babel-node --harmony ./index.js --ignore backup/"
-	},
-	"dependencies": {
-		"cors": "^2.8.5",
-		"dotenv": "^8.2.0",
-		"express": "^4.16.4",
-		"uuid": "^9.0.0"
-	},
-	"repository": {
-		"url": "https://github.com/freeCodeCamp/boilerplate-project-exercisetracker"
-	},
-	"license": "MIT",
-	"keywords": [
-		"node",
-		"express"
-	],
-	"devDependencies": {
-		"@babel/cli": "^7.20.7",
-		"@babel/core": "^7.20.7",
-		"@babel/eslint-parser": "^7.19.1",
-		"@babel/node": "^7.20.7",
-		"@babel/plugin-syntax-optional-chaining": "^7.8.3",
-		"@babel/preset-env": "^7.20.2",
-		"@babel/runtime": "^7.20.7",
-		"nodemon": "^2.0.20"
-	}
+  "name": "exercise-tracker",
+  "version": "0.1.0",
+  "description": "A REST API project, part of Free Code Camp's curriculum",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon --exec ./node_modules/.bin/babel-node --harmony ./index.js --ignore backup/"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.16.4",
+    "prettier": "^2.8.1",
+    "uuid": "^9.0.0"
+  },
+  "repository": {
+    "url": "https://github.com/freeCodeCamp/boilerplate-project-exercisetracker"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "express"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.7",
+    "@babel/eslint-parser": "^7.19.1",
+    "@babel/node": "^7.20.7",
+    "@babel/plugin-syntax-optional-chaining": "^7.8.3",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/runtime": "^7.20.7",
+    "nodemon": "^2.0.20"
+  }
 }
+
