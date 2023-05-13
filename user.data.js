@@ -1,5 +1,3 @@
-import { v5 as uuidv5 } from 'uuid';
+const users = [];
 
-const id = uuidv5();
-
-console.log(id);
+export default users;

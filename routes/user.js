@@ -2,7 +2,7 @@ import express from 'express';
 import fs from 'fs';
 import { v4 as UUIDv4 } from 'uuid';
 import path from 'path';
-
+import { users } from '../user.data';
 const Users = express.Router();
 
 Users.get('/api', (req, res) => {
@@ -14,38 +14,55 @@ Users.get('/api', (req, res) => {
 // ? user api
 
 Users.post('/api/users', (req, res) => {
-  // ?
+  const { username } = req.body;
+  // const requested = req.body;
+  // const value = JSON.stringify(username);
+  // console.log('🚀 ~ file: user.js:20 ~ Users.post ~ value', value);
 
-  const createUser = {
-    username: req.body.username,
-    _id: UUIDv4()
+  const id = UUIDv4();
+
+  const table = {
+    username: 'Viyas. S',
+    _id: 'difaudiufoaiufoien'
   };
-  // console.log('uuuuuuuuuuuid : ', [createUser]);
 
-  const user = JSON.stringify(createUser);
-  console.log('store the value : ', user);
+  // var table = {
+  //   userName: username,
+  //   _id: id
+  // };
+  // console.log('🚀 ~ file: user.js:27 ~ Users.post ~ table', JSON.stringify(table));
 
-  const userData = JSON.parse(user);
+  var json = JSON.stringify(table);
 
-  //   console.log('        ffffffffffffffffff', userData);
-  //   const parsethe = JSON.stringify(userData);
-  //   console.log('        ffffffffffffffffff', parsethe);
+  console.log('Table :', json);
 
-  //  ? store the value in file
-  fs.writeFile(path.resolve('../data.json'), user, (err, da) => {
+  // const val = users.push(json);
+  // console.log('🚀 ~ file: user.js:35 ~ Users.post ~ val', val);
+
+  const file = fs.writeFile('../StoreData.json', json, 'utf-8', err => {
     if (err) {
-      throw err;
-    } else {
-      console.log('data value : ', da);
-      return da;
+      return err;
     }
   });
+  console.log('🚀 ~ file: user.js:42 ~ fiel ~ fiel', file);
 
-  // ? Read the stored file
+  // var obj = [json];
 
-  return res.status(200).json({
-    message: 'Success',
-    data: [userData]
-  });
+  // console.log('🚀 ~ file: user.js:35 ~ Users.post ~ obj', obj);
+  // console.log('Storeing the Values :', obj);
+  // var store = obj.table.push(convert);
+  // console.log('Store the Data :', store);
+
+  // console.log('Object Data :', JSON.parse(JSON.stringify(obj)));
+  // console.log('Object :', JSON.parse(obj.table));
+
+  // console.log('Object Data :', store);
+  // ? parse and send the response
+  // const response = JSON.parse(createUser);
+
+  // return res.status(200).json({
+  //   message: 'Success'
+  // data: [response]
+  // });
 });
 export default Users;
